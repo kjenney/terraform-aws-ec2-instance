@@ -102,4 +102,8 @@ resource "aws_instance" "this" {
   credit_specification {
     cpu_credits = local.is_t_instance_type ? var.cpu_credits : null
   }
+
+  lifecycle {
+    ignore_changes = ["user_data", "ebs_block_device", "ephemeral_block_device", "ami", "key_name", "root_block_device"]
+  }
 }
