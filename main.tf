@@ -111,6 +111,7 @@ resource "aws_instance" "this" {
       ami,
       key_name,
       root_block_device,
+      tags,
     ]
   }
 }
