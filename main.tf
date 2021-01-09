@@ -106,11 +106,11 @@ resource "aws_instance" "this" {
   lifecycle {
     ignore_changes = [
       user_data,
-      ebs_block_device
+      ebs_block_device,
       ephemeral_block_device,
       ami,
       key_name,
-      root_block_device
+      root_block_device,
     ]
   }
 }
